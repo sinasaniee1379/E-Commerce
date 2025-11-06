@@ -1,43 +1,49 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme {
   --font-sans: var(--font-inter);
-  --color-primary: "#0C68F4";
-  --color-primary-25: "#E4EEFE";
-  --color-primary-50: "#AECDFB";
-  --color-primary-75: "#78ABF9";
-  --color-primary-100: "#428AF6";
-  --color-primary-200: "#2779F5";
-  --color-primary-400: "#0951BE";
-  --color-primary-500: "#063A88";
-  --color-primary-600: "#052E6D";
-  --color-primary-700: "#042352";
-  --color-primary-900: "#021736";
-  --color-secondary-100: "#FDDBC9";
-  --color-secondary-200: "#FAB793";
-  --color-secondary-300: "#F68242";
-  --color-secondary-400: "#F45E0C";
-  --color-secondary-500: "#BE4909";
-  --color-secondary-600: "#883406";
+  /* Primary Colors */
+  --color-primary: #0c68f4;
+  --color-primary-25: #e4eefe;
+  --color-primary-50: #aecdfb;
+  --color-primary-75: #78abf9;
+  --color-primary-100: #428af6;
+  --color-primary-200: #2779f5;
+  --color-primary-400: #0951be;
+  --color-primary-500: #063a88;
+  --color-primary-600: #052e6d;
+  --color-primary-700: #042352;
+  --color-primary-900: #021736;
+
+  /* Secondary Colors */
+  --color-secondary-100: #fddbc9;
+  --color-secondary-200: #fab793;
+  --color-secondary-300: #f68242;
+  --color-secondary-400: #f45e0c;
+  --color-secondary-500: #be4909;
+  --color-secondary-600: #883406;
+
+  /* Neutral Colors */
+  --color-gray-25: #f9f9f9;
+  --color-gray-50: #f6f6f6;
+  --color-gray-75: #ededed;
+  --color-gray-100: #cbcbcb;
+  --color-gray-200: #9e9e9e;
+  --color-gray-400: #717171;
+  --color-gray-500: #505050;
+  --color-gray-600: #444444;
+  --color-black: #0c0c0c;
+
+  /* Status Colors */
+  --color-error: #c91433;
+  --color-error-light: #fae7eb;
+  --color-success-light: #d1f7e5;
+  --color-success: #198754;
 }
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  background: var(--background);
+input {
+  border: none;
+  outline: none;
 }
