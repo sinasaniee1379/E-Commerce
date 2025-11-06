@@ -5,11 +5,30 @@
   --foreground: #171717;
 }
 
+@theme {
+  --font-sans: var(--font-inter);
+  --color-primary: "#0C68F4";
+  --color-primary-25: "#E4EEFE";
+  --color-primary-50: "#AECDFB";
+  --color-primary-75: "#78ABF9";
+  --color-primary-100: "#428AF6";
+  --color-primary-200: "#2779F5";
+  --color-primary-400: "#0951BE";
+  --color-primary-500: "#063A88";
+  --color-primary-600: "#052E6D";
+  --color-primary-700: "#042352";
+  --color-primary-900: "#021736";
+  --color-secondary-100: "#FDDBC9";
+  --color-secondary-200: "#FAB793";
+  --color-secondary-300: "#F68242";
+  --color-secondary-400: "#F45E0C";
+  --color-secondary-500: "#BE4909";
+  --color-secondary-600: "#883406";
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +38,6 @@
   }
 }
 
-body {
+html {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
