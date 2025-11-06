@@ -10,7 +10,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} px-4`}>
+      <body className={`${inter.className} `}>
         <Header />
         <QueryClient>{children}</QueryClient>
       </body>

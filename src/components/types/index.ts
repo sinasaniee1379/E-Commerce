@@ -25,9 +25,14 @@ export interface InputProps {
 export interface CartProps {
   category?: string;
   description?: string;
-  id?: 1;
+  id: number;
   image: string;
   price: number;
   rating: { rate: number; count: number };
   title: string;
+}
+
+export interface AccordionProps {
+  value: string;
+  accordionTitle: string;
 }

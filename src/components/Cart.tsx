@@ -2,15 +2,19 @@ import { twMerge } from "tailwind-merge";
 import Rate from "./Rate";
 import { CartProps } from "./types";
 import Image from "next/image";
+import Link from "next/link";
+import { PAGES } from "@/constants/links";
 
-const Cart = ({ image, price, rating, title }: CartProps) => {
+const Cart = ({ image, price, rating, title, id }: CartProps) => {
   const colorLists = [
     { classname: "bg-gray-800" },
     { classname: "bg-white" },
     { classname: "bg-gray-700" },
   ];
   return (
-    <div className="shadow-normal rounded-sm p-2 col-span-2 relative md:col-span-1">
+    <Link
+      href={PAGES.ProductDetails(id)}
+      className="shadow-normal rounded-sm p-2 col-span-2 relative md:col-span-1">
       <p className="absolute rounded-r-lg py-0.5 px-1 bg-secondary-100 text-secondary-400 text-xs font-light left-0">
         -15%
       </p>
@@ -49,7 +53,7 @@ const Cart = ({ image, price, rating, title }: CartProps) => {
           <Rate rate={rating.rate} />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

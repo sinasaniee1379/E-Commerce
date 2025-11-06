@@ -6,7 +6,7 @@ import { useState } from "react";
 const Header = () => {
   const [search, setSearch] = useState("");
   return (
-    <div className="gap-3 flex  flex-col">
+    <div className="gap-3 flex px-4 flex-col">
       <div className="flex items-center justify-between py-2 px-1">
         <HamburgerMenu variant="Linear" className="stroke-black" size={24} />
         <h2 className="text-primary-400 font-medium">Tech Heim</h2>
