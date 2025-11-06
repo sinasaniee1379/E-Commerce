@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
-@theme {
+:root {
+  /* Override Tailwind's default black color */
+  --color-black: #0c0c0c; /* your custom black */
+}
+@theme inline {
   --font-sans: var(--font-inter);
   /* Primary Colors */
   --color-primary: #0c68f4;
@@ -32,6 +36,9 @@
   --color-gray-400: #717171;
   --color-gray-500: #505050;
   --color-gray-600: #444444;
+  --color-gray-700: #8b8b8b;
+  --color-gray-800: #101010;
+  --color-gray-900: #292d32;
   --color-black: #0c0c0c;
 
   /* Status Colors */
@@ -39,6 +46,11 @@
   --color-error-light: #fae7eb;
   --color-success-light: #d1f7e5;
   --color-success: #198754;
+
+  /* Shadows */
+  --shadow-lightest: -2px 2px 15px -1px rgba(113, 113, 113, 0.12);
+  --shadow-light: -2px 2px 20px -1px rgba(113, 113, 113, 0.2);
+  --shadow-normal: -2px 2px 10px -1px rgba(113, 113, 113, 0.15);
 }
 @theme inline {
   --font-sans: var(--font-inter);

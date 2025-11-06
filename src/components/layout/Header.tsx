@@ -27,6 +27,7 @@ const Header = () => {
             className="stroke-gray-400"
           />
         }
+        setState={setSearch}
         className="bg-gray-75"
       />
     </div>

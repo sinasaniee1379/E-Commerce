@@ -9,6 +9,7 @@ const InputBase = ({
   placeholder,
   title,
   icon,
+  setState,
 }: InputProps) => {
   return (
     <div className="w-full">
@@ -24,6 +25,7 @@ const InputBase = ({
           type={type}
           name={name}
           placeholder={placeholder}
+          onChange={(e) => setState(e.target.value)}
         />
         {icon && icon}
       </div>
