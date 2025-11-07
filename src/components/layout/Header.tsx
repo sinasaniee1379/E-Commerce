@@ -53,7 +53,9 @@ const Header = () => {
               href={item.link}
               className={twMerge(
                 "text-lg font-light text-black border-b border-b-white p-2",
-                pathname === item.link && "text-primary border-b-primary"
+                (pathname === item.link ||
+                  pathname.startsWith(`${item.link}/`)) &&
+                  "text-primary border-b-primary"
               )}>
               {item.title}
             </Link>
