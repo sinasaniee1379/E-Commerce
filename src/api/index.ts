@@ -7,7 +7,7 @@ const getProducts = async () => {
   return response.data;
 };
 
-const getProduct = async (id: number) => {
+const getProduct = async (id: string) => {
   const response = await http.get(`${PRODUCTS}/${id}`);
   return response.data;
 };
@@ -19,7 +19,7 @@ export const useGetProductsQuery = () => {
   });
 };
 
-export const useGetProductQuery = (productId: number) => {
+export const useGetProductQuery = (productId: string) => {
   return useQuery({
     queryKey: [PRODUCT(productId)],
     queryFn: () => getProduct(productId),

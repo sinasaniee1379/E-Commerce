@@ -22,7 +22,7 @@ export interface InputProps {
   setState: Dispatch<SetStateAction<string>>;
 }
 
-export interface CartProps {
+export interface IProduct {
   category?: string;
   description?: string;
   id: number;
@@ -35,4 +35,12 @@ export interface CartProps {
 export interface AccordionProps {
   value: string;
   accordionTitle: string;
+  children: ReactNode;
+  classnameTrigger?: string;
+  classnameContent?: string;
+}
+
+export interface ButtonProps {
+  title: string;
+  className?: string;
 }

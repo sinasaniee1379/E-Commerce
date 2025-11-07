@@ -5,15 +5,23 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { AccordionProps } from "./types";
+import { twMerge } from "tailwind-merge";
 
-const AccordionComponent = ({ accordionTitle, value }: AccordionProps) => {
+const AccordionComponent = ({
+  accordionTitle,
+  value,
+  children,
+  classnameTrigger,
+  classnameContent,
+}: AccordionProps) => {
   return (
     <AccordionItem value={value}>
-      <AccordionTrigger className="text-white font-medium">
+      <AccordionTrigger
+        className={twMerge("text-white font-medium", classnameTrigger)}>
         {accordionTitle}
       </AccordionTrigger>
-      <AccordionContent className="text-white">
-        Yes. It adheres to the WAI-ARIA design pattern.
+      <AccordionContent className={twMerge("text-white", classnameContent)}>
+        {children}
       </AccordionContent>
     </AccordionItem>
   );

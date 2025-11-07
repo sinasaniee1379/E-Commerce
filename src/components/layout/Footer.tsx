@@ -85,8 +85,9 @@ const Footer = () => {
           <AccordionComponent
             accordionTitle={item.title}
             value={item.title}
-            key={index}
-          />
+            key={index}>
+            Yes. It adheres to the WAI-ARIA design pattern.
+          </AccordionComponent>
         ))}
       </Accordion>
       <div className="text-gray-100 flex items-center justify-center gap-2 border-t-2 border-t-primary-900">

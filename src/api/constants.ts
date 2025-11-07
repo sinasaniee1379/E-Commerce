@@ -1,2 +1,2 @@
 export const PRODUCTS = "products";
-export const PRODUCT = (productId: number) => `products/${productId}`;
+export const PRODUCT = (productId: string) => `products/${productId}`;
