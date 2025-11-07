@@ -2,7 +2,6 @@ import Header from "@/components/layout/Header";
 import "./globals.css";
 import { inter } from "@/constants/localFont";
 import QueryClient from "@/components/provider/QueryClient";
-import Footer from "@/components/layout/Footer";
 
 export default function RootLayout({
   children,

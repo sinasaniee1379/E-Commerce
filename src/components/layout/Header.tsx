@@ -10,7 +10,6 @@ import { usePathname } from "next/navigation";
 const Header = () => {
   const [search, setSearch] = useState("");
   const pathname = usePathname();
-  console.log(pathname);
   const header = [
     { title: "Home", link: PAGES.home },
     { title: "Products", link: PAGES.products },
