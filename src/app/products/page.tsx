@@ -4,12 +4,15 @@ import { useGetProductsQuery } from "@/api";
 import AccordionComponent from "@/components/Accordion";
 import Cart from "@/components/Cart";
 import Footer from "@/components/layout/Footer";
+import Skeleton from "@/components/Skeleton";
 import { IProduct } from "@/components/types";
 import { Accordion } from "@/components/ui/accordion";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Setting4 } from "iconsax-reactjs";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
+
+const mockData = Array.from({ length: 8 });
 
 export default function Products() {
   const [isFilter, setIsFilter] = useState(false);
@@ -24,7 +27,7 @@ export default function Products() {
       ],
     },
   ];
-  const { data } = useGetProductsQuery();
+  const { data, isPending } = useGetProductsQuery();
   const products: IProduct[] = data;
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
@@ -36,8 +39,8 @@ export default function Products() {
   return (
     <>
       <div>
-        <div className="mt-4 px-4 lg:px-[5%] lg:flex lg:gap-6">
-          <div className="lg:flex lg:flex-col lg:grid-cols-4 lg:w-2/4 lg:max-w-sm">
+        <div className="mt-4 px-4 lg:px-[5%] lg:flex lg:gap-6 min-h-dvh">
+          <div className="lg:flex lg:flex-col  lg:w-1/4 lg:max-w-sm">
             <div className="flex gap-1.5">
               <p>Home</p> {">"}{" "}
               <p className="text-primary font-light">Products</p>
@@ -68,18 +71,25 @@ export default function Products() {
               <p>Filters</p>
             </div>
           </div>
-          <div>
+          <div className="w-full">
             <div className="grid grid-cols-4 gap-4 mt-6 lg:grid-cols-8">
-              {currentItems?.map((item) => (
-                <Cart
-                  id={item.id}
-                  image={item.image}
-                  price={item.price}
-                  rating={item.rating}
-                  title={item.title}
-                  key={item.id}
-                />
-              ))}
+              {isPending
+                ? mockData.map((_, index) => (
+                    <Skeleton
+                      key={index}
+                      className="col-span-2 w-full h-[186px]"
+                    />
+                  ))
+                : currentItems?.map((item) => (
+                    <Cart
+                      id={item.id}
+                      image={item.image}
+                      price={item.price}
+                      rating={item.rating}
+                      title={item.title}
+                      key={item.id}
+                    />
+                  ))}
             </div>
             <div className="flex justify-center items-center gap-2 mt-8">
               {Array.from({ length: totalPages }).map((_, i) => (
@@ -110,6 +120,7 @@ export default function Products() {
             Clear all
           </p>
         </div>
+
         <Accordion
           type="single"
           collapsible
