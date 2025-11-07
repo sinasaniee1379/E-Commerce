@@ -84,9 +84,9 @@ const Product = ({ params }: ProductProps) => {
   const product: IProduct = data;
   return (
     <>
-      <div className="relative min-h-dvh">
+      <div className="relative lg:min-h-dvh">
         <div className="mt-4 px-4 lg:px-[5%] mb-6">
-          <div className="flex gap-1.5">
+          <div className="flex text-xs lg:text-lg gap-1.5">
             <p>Home</p> {">"} <p>Products</p>
             {">"}{" "}
             <p className="text-primary font-light">
@@ -117,7 +117,7 @@ const Product = ({ params }: ProductProps) => {
                   onClick={() => setLike(!like)}
                 />
               </div>
-              <div className="flex lg:col-span-5 p-2 items-center justify-center">
+              <div className="flex lg:col-span-4 xl:col-span-5 p-2 items-center justify-center">
                 <Image
                   src={product?.image}
                   width={312}
@@ -147,17 +147,19 @@ const Product = ({ params }: ProductProps) => {
 
                 <div className="mt-3">
                   {infoList.map((item, index) => (
-                    <div key={index} className="flex py-2">
+                    <div
+                      key={index}
+                      className="flex text-xs font-medium lg:text-sm py-2">
                       <span className="flex items-center w-full">
                         <p className="w-2 h-2 rounded-full bg-gray-400"></p>
-                        <p className="pl-4">{item.title}</p>
+                        <p className="pl-4 text-gray-400">{item.title}</p>
                       </span>
                       <p className="w-full">{item.text}</p>
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="lg:col-span-3 hidden lg:flex lg:flex-col p-6 shadow-light rounded-lg h-fit gap-4">
+              <div className="lg:col-span-4 xl:col-span-3 hidden lg:flex lg:flex-col p-6 shadow-light rounded-lg h-fit gap-4">
                 <div className="flex justify-between items-center">
                   <p className="text-xl font-medium">
                     ${" "}
@@ -246,7 +248,9 @@ const Product = ({ params }: ProductProps) => {
           </div>
         </div>
       </div>
-      <Footer />
+      <div className="hidden lg:block">
+        <Footer />
+      </div>
     </>
   );
 };

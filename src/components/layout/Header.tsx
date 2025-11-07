@@ -45,7 +45,12 @@ const Header = () => {
           className="bg-gray-75"
         />
       </div>
-      <div className="hidden lg:flex lg:px-[5%] justify-center items-center py-7">
+      <div
+        className={twMerge(
+          "hidden lg:flex lg:px-[5%] justify-center items-center py-7 ",
+          pathname.startsWith(`${PAGES.products}/`) &&
+            "border-b border-solid [border-image-slice:1] [border-image-source:linear-gradient(90deg,rgba(12,104,244,0.3)_0%,rgba(12,104,244,0.7)_50%,rgba(12,104,244,0.3)_100%)]"
+        )}>
         <div className="flex gap-12">
           {header.map((item, index) => (
             <Link

@@ -77,7 +77,7 @@ const Footer = () => {
     { title: "Contact us" },
   ];
   return (
-    <div className="bg-primary-900 flex flex-col p-6 mt-6 relative lg:py-5 lg:px-[5%] lg:items-center lg:justify-between">
+    <footer className="bg-primary-900 flex flex-col p-6 mt-6 relative lg:py-5 lg:px-[5%] lg:items-center lg:justify-between">
       <div className="gap-28 hidden lg:flex w-full ">
         {footerLists.map((item, index) => (
           <div key={index} className="flex flex-col gap-2">
@@ -123,7 +123,7 @@ const Footer = () => {
           ))}
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
