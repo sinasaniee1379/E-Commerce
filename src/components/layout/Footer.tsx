@@ -1,7 +1,6 @@
 import { CallCalling, Location, SmsEdit } from "iconsax-reactjs";
 import AccordionComponent from "../Accordion";
 import { Accordion } from "../ui/accordion";
-import ShapeIcon from "./Shape";
 import Image from "next/image";
 import ImageFooter from "@/assets/svg/Ellipse.svg";
 const Footer = () => {
